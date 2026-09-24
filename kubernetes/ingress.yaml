@@ -1,0 +1,45 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
+metadata:
+  name: insurance-platform-ingress
+
+spec:
+  ingressClassName: nginx
+
+  rules:
+
+  - host: insurance.local
+
+    http:
+      paths:
+
+      - path: /policy
+        pathType: Prefix
+
+        backend:
+          service:
+            name: policy-service
+
+            port:
+              number: 80
+
+      - path: /claims
+        pathType: Prefix
+
+        backend:
+          service:
+            name: claims-service
+
+            port:
+              number: 80
+
+      - path: /notification
+        pathType: Prefix
+
+        backend:
+          service:
+            name: notification-service
+
+            port:
+              number: 80
