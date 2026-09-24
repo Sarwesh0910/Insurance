@@ -1,0 +1,29 @@
+name: CI-CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Build Images
+      run: docker-compose build
+
+    - name: Security Scan
+      run: echo "Run Trivy Scan"
+
+    - name: Push Images
+      run: echo "Push Images to Registry"
+
+    - name: Deploy
+      run: echo "Deploy to EKS"
