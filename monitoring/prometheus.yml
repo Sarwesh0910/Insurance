@@ -1,0 +1,28 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+
+  - job_name: policy-service
+
+    static_configs:
+      - targets:
+          - policy-service:8081
+
+  - job_name: claims-service
+
+    static_configs:
+      - targets:
+          - claims-service:8082
+
+  - job_name: notification-service
+
+    static_configs:
+      - targets:
+          - notification-service:8083
+
+  - job_name: audit-service
+
+    static_configs:
+      - targets:
+          - audit-service:8084
