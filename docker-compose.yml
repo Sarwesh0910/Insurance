@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+
+  policy-service:
+    build: ./policy-service
+    container_name: policy-service
+    ports:
+      - "8081:8081"
+
+  claims-service:
+    build: ./claims-service
+    container_name: claims-service
+    ports:
+      - "8082:8082"
+
+  notification-service:
+    build: ./notification-service
+    container_name: notification-service
+    ports:
+      - "8083:8083"
+
+  audit-service:
+    build: ./audit-service
+    container_name: audit-service
+    ports:
+      - "8084:8084"
