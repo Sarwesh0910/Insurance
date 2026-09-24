@@ -1,0 +1,21 @@
+{
+  "title": "Insurance Platform Dashboard",
+  "panels": [
+    {
+      "title": "CPU Usage",
+      "type": "graph"
+    },
+    {
+      "title": "Memory Usage",
+      "type": "graph"
+    },
+    {
+      "title": "Request Count",
+      "type": "graph"
+    },
+    {
+      "title": "Error Rate",
+      "type": "graph"
+    }
+  ]
+}
